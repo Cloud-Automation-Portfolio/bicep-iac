@@ -21,7 +21,7 @@ This project provisions a Storage Account and Key Vault with best-practice secur
   - [6. Validation in Azure Portal]
   - [7. Cleanup]
 - [Screenshots](#screenshots)
-- [Advanced Mini Labs Functions Loops Conditionals and What If](#advanced-mini-labs-functions-loops-conditionals-and-what-if)
+- [Advanced Mini Labs Functions](#advanced-mini-labs-functions)
 - [Other Azure Native Bicep Features](#other-azure-native-bicep-features)
 - [Lessons Learned](#lessons-learned)
 - [Notes and Limitations](#notes-and-limitations)
@@ -133,7 +133,7 @@ This lab demonstrates secure Infrastructure as Code (IaC) and portal workflows f
 
 ---
 
-## Advanced Mini Labs Functions Loops Conditionals and What If
+## Advanced Mini Labs Functions
 
 **Why this matters:**  
 These advanced Bicep features showcase skills highly valued by Azure recruiters, proving you can deliver cloud-native, dynamic and safe automation.
