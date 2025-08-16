@@ -17,9 +17,8 @@ This project provisions a Storage Account and Key Vault with best-practice secur
   - [2. Resource Group Creation]
   - [3. Secure Storage Account Deployment]
   - [4. Secure Key Vault Deployment]
-  - [5. Advanced Bicep: Loops, Conditionals & What-If]
-  - [6. Validation in Azure Portal]
-  - [7. Cleanup]
+  - [5. Validation in Azure Portal]
+  - [6. Cleanup]
 - [Advanced Mini Labs Functions](#advanced-mini-labs-functions)
   - [1. Native Azure Functions]
   - [2 Native Resource Loops]
