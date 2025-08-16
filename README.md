@@ -168,7 +168,7 @@ resource storageAccounts 'Microsoft.Storage/storageAccounts@2022-09-01' = [for n
     DeployedBy: 'Bicep'
   }
 }]
-
+```
 ---
 
 ### 4. Safe "What-If" Preview 
