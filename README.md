@@ -20,11 +20,11 @@ This project provisions a Storage Account and Key Vault with best-practice secur
   - [5. Validation in Azure Portal]
   - [6. Cleanup]
 - [Advanced Mini Labs Functions](#advanced-mini-labs-functions)
-  - [1. Native Azure Functions]
-  - [2 Native Resource Loops]
-  - [3 Inline 'if' Conditionals]
-  - [4. Native "What-If" Deployments]
-  - [5. Other Azure Native Bicep Features]
+  - [1.1 Native Azure Functions]
+  - [1.2 Native Resource Loops]
+  - [1.3 Inline 'if' Conditionals]
+  - [1.4 Native "What-If" Deployments]
+  - [1.5 Other Azure Native Bicep Features]
 - [Screenshots](#screenshots)
 - [Lessons Learned](#lessons-learned)
 - [Notes and Limitations](#notes-and-limitations)
@@ -113,7 +113,7 @@ Provision multiple Storage Accounts in a single deployment, but only in non-prod
 
 ### **Key Features Demonstrated**
 
-| Feature                                 | How Demonstrated                                                |
+| Feature                                 | How is it Demonstrated                                          |
 |-----------------------------------------|-----------------------------------------------------------------|
 | 1.1 **Native Azure Functions**          | Uses `resourceGroup().location` and `tenant().tenantId` in code |
 | 1.2 **Native Resource Loops**           | Deploys multiple storage accounts from an array in Bicep        |
