@@ -115,14 +115,14 @@ Provision multiple Storage Accounts in a single deployment, but only in non-prod
 
 | Feature                                 | How Demonstrated                                                |
 |-----------------------------------------|-----------------------------------------------------------------|
-| 1 **Native Azure Functions**            | Uses `resourceGroup().location` and `tenant().tenantId` in code |
-| 2 **Native Resource Loops**             | Deploys multiple storage accounts from an array in Bicep        |
-| 3 **Inline Conditionals (`if`)**        | Only deploys resources when not in 'prod' environment           |
-| 4 **Native "What-If" Deployments**      | Safely previews changes before applying them                    |
+| 1.1 **Native Azure Functions**          | Uses `resourceGroup().location` and `tenant().tenantId` in code |
+| 1.2 **Native Resource Loops**           | Deploys multiple storage accounts from an array in Bicep        |
+| 1.3 **Inline Conditionals (`if`)**      | Only deploys resources when not in 'prod' environment           |
+| 1.4 **Native "What-If" Deployments**    | Safely previews changes before applying them                    |
 
 ---
 
-### 1. Native Azure Functions 
+### 1.1 Native Azure Functions 
 
 **Dynamically using the resource group’s location and Azure subscription tenantId in your deployment**, which is awkward/impossible in other IaC tools *(Screenshot: `keyvault-module-extra.png`)*
 
@@ -130,7 +130,7 @@ Provision multiple Storage Accounts in a single deployment, but only in non-prod
 
 ---
 
-### 2. & 3. Native Resource Loops + Inline Conditionals 
+### 1.2 & 1.3 Native Resource Loops + Inline Conditionals 
 
 - Deploy multiple resources from an array in a single statement, based on environment *(Screenshots: `advanced-bicep-intellisense.png` & `storage-accounts-looped.png`)*
 
@@ -160,9 +160,10 @@ resource storageAccounts 'Microsoft.Storage/storageAccounts@2022-09-01' = [for n
   }
 }]
 ```
+
 ---
 
-### 4. Safe "What-If" Preview 
+### 1.4 Safe "What-If" Preview 
 
 - Safely preview all changes before deployment:
 
@@ -175,7 +176,7 @@ az deployment group what-if --resource-group lab3-bicep-advanced --template-file
 
 ---
 
-## Other Azure Native Bicep Features
+## 1.5 Other Azure Native Bicep Features
 
 - **Instant access to latest Azure resource types and API versions** (always up to date, no provider lag)
 - **Strongly-typed modules** — Bicep validates parameter types and references across modules natively.
@@ -189,24 +190,25 @@ az deployment group what-if --resource-group lab3-bicep-advanced --template-file
 
 *All screenshots are included in the `screenshots/` folder.*
 
-| Step | Filename                         | Description                                                     |
-|------|----------------------------------|-----------------------------------------------------------------|
-| 1    | secure-folder-setup.png          | Project folder and file setup                                   |
-| 2    | resource-group-created.png       | Resource group created in Azure                                 |
-| 3    | storage-account-encryption.png   | Storage Account encryption & security settings                  |
-| 3    | storage-module-final.png         | Bicep Storage Account module code                               |
-| 4    | keyvault-overview.png            | Key Vault created, overview in portal                           |
-| 4    | keyvault-access-policies.png     | Key Vault access policies (user permissions)                    |
-| 4    | keyvault-properties.png          | Key Vault properties: soft-delete, purge protection             |
-| 4    | keyvault-module.png              | Key Vault IaC module code (original)                            |
-| 4    | keyvault-module-extra.png        | Key Vault IaC module code (with advanced features)              |
-| 5    | advanced-bicep-intellisense.png  | Bicep code with native loops & inline conditionals in VS Code   |
-| 5    | what-if-preview-storage.png      | “What-If” deployment output: safe preview of changes            |
-| 5    | storage-accounts-looped.png      | Azure portal: both storage accounts created using Bicep loop    |
-| 6    | resource-group-overview.png      | Both resources present in the resource group                    |
-| --   | main.png                         | main.bicep code (overall template)                              |
-| --   | deployment-command.png           | CLI deployment command/output (for IaC attempt)                 |
-| --   | minilab-keyvault-portal.png      | Mini-lab: Key Vault in portal (shows region, RG)                |
+| Step   | Filename                         | Description                                                     |
+|--------|----------------------------------|-----------------------------------------------------------------|
+| 1      | secure-folder-setup.png          | Project folder and file setup                                   |
+| 2      | resource-group-created.png       | Resource group created in Azure                                 |
+| 3      | main.png                         | main.bicep code (overall template)                              |
+| 3      | storage-account-encryption.png   | Storage Account encryption & security settings                  |
+| 3      | storage-module-final.png         | Bicep Storage Account module code                               |
+| 4      | keyvault-overview.png            | Key Vault created, overview in portal                           |
+| 4      | keyvault-access-policies.png     | Key Vault access policies (user permissions)                    |
+| 4      | keyvault-properties.png          | Key Vault properties: soft-delete, purge protection             |
+| 4      | keyvault-module.png              | Key Vault IaC module code (original)                            |
+| 5      | resource-group-overview.png      | Both resources present in the resource group                    |
+| 1.1    | keyvault-module-extra.png        | Key Vault IaC module code (with advanced features)              |
+| 1.2/1.3| advanced-bicep-intellisense.png  | Bicep code with native loops & inline conditionals in VS Code   |
+| 1.2/1.3| storage-accounts-looped.png      | Azure portal: both storage accounts created using Bicep loop    |
+| 1.4    | what-if-preview-storage.png      | “What-If” deployment output: safe preview of changes            |
+| 1.4    | storage-accounts-looped.png      | Azure portal: both storage accounts created using Bicep loop    |
+| --     | deployment-command.png           | CLI deployment command/output (for IaC attempt)                 |
+| --     | minilab-keyvault-portal.png      | Mini-lab: Key Vault in portal (shows region, RG)                |
 
 ---
 
