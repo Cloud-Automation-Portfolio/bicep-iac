@@ -95,18 +95,10 @@ This lab demonstrates secure Infrastructure as Code (IaC) and portal workflows f
   - User access policy (Get, List, Set, Delete)
   - Soft-delete and purge protection *(Screenshots: `keyvault-overview.png`, `keyvault-access-policies.png`, `keyvault-properties.png`)*
 
-### 5. Advanced Bicep: Loops, Conditionals & What-If
-- Created a new Bicep module (`advanced-features.bicep`) using:
-  - **Native resource loops:** Deploy multiple Storage Accounts from an array with one line of code.
-  - **Inline conditionals (`if`):** Only deploy resources in non-production environments.
-  - **Native “what-if” deployments:** Preview all changes before applying them.
-- Ran a safe, cloud-native “what-if” preview to show intended resource changes (Screenshot: `what-if-preview-storage.png`)
-- (Optional) Deployed resources and validated multiple Storage Accounts created with a single Bicep loop (Screenshot: `storage-accounts-looped.png`)
-
-### 6. Validation in Azure Portal
+### 5. Validation in Azure Portal
 - Verified Storage Account(s) and Key Vault existence, region, and configuration in the Azure portal as proof of success *(Screenshots: `resource-group-overview.png`, `storage-accounts-looped.png`)*
 
-### 7. Cleanup
+### 6. Cleanup
 - Deleted the Resource Group to avoid unnecessary cloud costs.
 - Retained IaC code and documentation as a reusable, production-ready template for secure Azure deployments.
 
@@ -176,7 +168,8 @@ resource storageAccounts 'Microsoft.Storage/storageAccounts@2022-09-01' = [for n
 - Safely preview all changes before deployment:
 
 ```powershell 
-az deployment group what-if --resource-group lab3-bicep-advanced --template-file advanced-features.bicep --parameters environment='dev'```
+az deployment group what-if --resource-group lab3-bicep-advanced --template-file advanced-features.bicep --parameters environment='dev'
+```
 
 - Result in CLI: See all changes before you deploy *(Screenshot: what-if-preview-storage.png)*
 - Result in Azure Portal: Both storage accounts appear, demonstrating deployment via loop *(Screenshot: storage-accounts-looped.png)*
@@ -186,7 +179,6 @@ az deployment group what-if --resource-group lab3-bicep-advanced --template-file
 ## Other Azure Native Bicep Features
 
 - **Instant access to latest Azure resource types and API versions** (always up to date, no provider lag)
-- **Inline conditionals (`if` statements)** for dynamic, environment-aware deployments.
 - **Strongly-typed modules** — Bicep validates parameter types and references across modules natively.
 - **Direct resource property references** (including cross-module)
 - **No state file required** — deployments are always in sync with the Azure Resource Manager.
