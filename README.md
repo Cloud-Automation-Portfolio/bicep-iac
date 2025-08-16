@@ -27,7 +27,6 @@ This project provisions a Storage Account and Key Vault with best-practice secur
   - [4. Native "What-If" Deployments]
   - [5. Other Azure Native Bicep Features]
 - [Screenshots](#screenshots)
-- [Other Azure Native Bicep Features](#other-azure-native-bicep-features)
 - [Lessons Learned](#lessons-learned)
 - [Notes and Limitations](#notes-and-limitations)
 - [References](#references)
