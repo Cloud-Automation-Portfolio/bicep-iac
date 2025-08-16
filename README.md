@@ -175,7 +175,8 @@ resource storageAccounts 'Microsoft.Storage/storageAccounts@2022-09-01' = [for n
 
 - Safely preview all changes before deployment:
 
-```powershell az deployment group what-if --resource-group lab3-bicep-advanced --template-file advanced-features.bicep --parameters environment='dev'```
+```powershell 
+az deployment group what-if --resource-group lab3-bicep-advanced --template-file advanced-features.bicep --parameters environment='dev'```
 
 - Result in CLI: See all changes before you deploy *(Screenshot: what-if-preview-storage.png)*
 - Result in Azure Portal: Both storage accounts appear, demonstrating deployment via loop *(Screenshot: storage-accounts-looped.png)*
